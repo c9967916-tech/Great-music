@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Moods - Your Sound Sanctuary</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Music Moods</h1>
+            <p class="subtitle">Choose your listening experience</p>
+        </header>
+        
+        <main>
+            <!-- Featured Song at the top -->
+            <div class="featured-song">
+                <div class="song-card featured">
+                    <div class="song-info">
+                        <h2 class="song-title">改变自己</h2>
+                        <p class="song-artist">王力宏</p>
+                        <a href="https://b23.tv/jEbRhXu" class="song-link" target="_blank">Play Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Navigation Buttons -->
+            <div class="main-nav">
+                <!-- Single Songs Section -->
+                <button class="nav-btn large" onclick="toggleSection('singles')">
+                    <span class="btn-icon">🎵</span>
+                    <span class="btn-text">Single Songs</span>
+                    <span class="btn-arrow">▼</span>
+                </button>
+                
+                <div id="singles-section" class="nav-section hidden">
+                    <a href="energetic.html" class="sub-btn">Energetic ⚡</a>
+                    <a href="calm.html" class="sub-btn">Calm 🌊</a>
+                    <a href="classic.html" class="sub-btn">Classic 🎻</a>
+                    <a href="ambitious.html" class="sub-btn">Ambitious 🚀</a>
+                </div>
+
+                <!-- Playlists Section -->
+                <button class="nav-btn large" onclick="toggleSection('playlists')">
+                    <span class="btn-icon">📋</span>
+                    <span class="btn-text">Playlists</span>
+                    <span class="btn-arrow">▼</span>
+                </button>
+                
+                <div id="playlists-section" class="nav-section hidden">
+                    <!-- Calming Playlist -->
+                    <div class="playlist-category">
+                        <button class="playlist-btn" onclick="togglePlaylist('calming')">
+                            <span>Calming</span>
+                            <span class="playlist-arrow">▶</span>
+                        </button>
+                        <div id="calming-playlist" class="playlist-songs hidden">
+                            <a href="#" class="playlist-song">Song 1 - Artist</a>
+                            <a href="#" class="playlist-song">Song 2 - Artist</a>
+                            <a href="#" class="playlist-song">Song 3 - Artist</a>
+                        </div>
+                    </div>
+
+                    <!-- Low-fi Playlist -->
+                    <div class="playlist-category">
+                        <button class="playlist-btn" onclick="togglePlaylist('lofi')">
+                            <span>Low-fi</span>
+                            <span class="playlist-arrow">▶</span>
+                        </button>
+                        <div id="lofi-playlist" class="playlist-songs hidden">
+                            <a href="#" class="playlist-song">Song 1 - Artist</a>
+                            <a href="#" class="playlist-song">Song 2 - Artist</a>
+                            <a href="#" class="playlist-song">Song 3 - Artist</a>
+                        </div>
+                    </div>
+
+                    <!-- Anime Playlist -->
+                    <div class="playlist-category">
+                        <button class="playlist-btn" onclick="togglePlaylist('anime')">
+                            <span>Anime</span>
+                            <span class="playlist-arrow">▶</span>
+                        </button>
+                        <div id="anime-playlist" class="playlist-songs hidden">
+                            <a href="#" class="playlist-song">Song 1 - Artist</a>
+                            <a href="#" class="playlist-song">Song 2 - Artist</a>
+                            <a href="#" class="playlist-song">Song 3 - Artist</a>
+                        </div>
+                    </div>
+
+                    <!-- Rock Playlist -->
+                    <div class="playlist-category">
+                        <button class="playlist-btn" onclick="togglePlaylist('rock')">
+                            <span>Rock</span>
+                            <span class="playlist-arrow">▶</span>
+                        </button>
+                        <div id="rock-playlist" class="playlist-songs hidden">
+                            <a href="#" class="playlist-song">Song 1 - Artist</a>
+                            <a href="#" class="playlist-song">Song 2 - Artist</a>
+                            <a href="#" class="playlist-song">Song 3 - Artist</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId + '-section');
+            const isHidden = section.classList.contains('hidden');
+            
+            // Hide all sections first
+            const allSections = document.querySelectorAll('.nav-section');
+            allSections.forEach(sec => {
+                sec.classList.add('hidden');
+            });
+            
+            // If it was hidden, show it
+            if (isHidden) {
+                section.classList.remove('hidden');
+            }
+        }
+
+        function togglePlaylist(playlistId) {
+            const playlist = document.getElementById(playlistId + '-playlist');
+            const arrow = event.currentTarget.querySelector('.playlist-arrow');
+            
+            // Toggle the playlist
+            playlist.classList.toggle('hidden');
+            
+            // Rotate the arrow
+            if (playlist.classList.contains('hidden')) {
+                arrow.textContent = '▶';
+            } else {
+                arrow.textContent = '▼';
+            }
+        }
+    </script>
+</body>
+</html>
