@@ -1,0 +1,62 @@
+/* ===== PLAYLIST STYLES ===== */
+.playlist-category {
+    margin-bottom: 10px;
+}
+
+.playlist-btn {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.playlist-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.playlist-arrow {
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+}
+
+.playlist-songs {
+    margin-top: 10px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    animation: slideDown 0.3s ease;
+}
+
+.playlist-song {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.playlist-song:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+/* Make sure the nav-section grid works with playlists */
+#playlists-section.nav-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
