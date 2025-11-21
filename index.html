@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Music</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #85d2ff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .splash-container {
+            text-align: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .splash-poster {
+            max-width: 90vw;
+            max-height: 80vh;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .splash-poster:hover {
+            transform: scale(1.02);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="splash-container">
+        <img src="Great Music.png" alt="Great Music" class="splash-poster" onclick="goToHome()">
+    </div>
+
+    <script>
+        function goToHome() {
+            window.location.href = 'home.html';
+        }
+        
+        // Also allow any key press to continue
+        document.addEventListener('keydown', function() {
+            window.location.href = 'home.html';
+        });
+    </script>
+</body>
+</html>
